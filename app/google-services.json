@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "759298847331",
+    "project_id": "dscs-5733a",
+    "storage_bucket": "dscs-5733a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759298847331:android:0d1225b0fab95d74c37e56",
+        "android_client_info": {
+          "package_name": "com.example.test1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0NQPvkNdDN6YOq7YbuQLJ-OMvVFM8NwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
