@@ -5,13 +5,15 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+
 //import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var SignUpButton:Button
 
-//    var mAuth: FirebaseAuth?=null
+    var mAuth: FirebaseAuth?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        mAuth=FirebaseAuth.getInstance()
+        mAuth=FirebaseAuth.getInstance()
 
     }
 
@@ -32,12 +34,14 @@ class MainActivity : AppCompatActivity() {
         SignUpButton=findViewById(R.id.SignUpButton)
     }
 
-//    override fun onStart() {
-//        super.onStart()
-//        if (mAuth?.currentUser == null){
-//            val intent= Intent(this,SignUp::class.java)
-//            startActivity(intent)
-//        }
-//    }
+    override fun onStart() {
+        mAuth = FirebaseAuth.getInstance()
+        val currentUser = mAuth!!.currentUser
+        if(currentUser != null){
+            val i = Intent(this@MainActivity,FirstScreen::class.java)
+            startActivity(i)
+        }
+        super.onStart()
+    }
 
 }
