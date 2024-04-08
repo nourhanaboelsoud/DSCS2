@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">test1</string>
+    <string name="app_name">DSCS</string>
     <string name="welcome">Welcome</string>
     <string name="please_login_your_information">please login your information</string>
     <string name="email">Email</string>
@@ -23,4 +23,12 @@
     <string name="reset_password">reset Password</string>
     <string name="Reset_password">Reset_password</string>
     <string name="required">Required</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="bio">Bio</string>
+    <string name="save_information">Save Information</string>
+    <string name="back">Back</string>
+    <string name="show_user_info">Show User Info</string>
+    <string name="save">save</string>
+    <string name="show_info">show info</string>
 </resources>
