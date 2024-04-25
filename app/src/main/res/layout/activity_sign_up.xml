@@ -34,19 +34,6 @@
                 android:importantForAccessibility="no"
                 android:focusable="true" />
 
-<!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--                android:id="@+id/fabForgetPasswordSignIn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:clickable="true"-->
-<!--                app:backgroundTint="@color/white"-->
-<!--                app:srcCompat="@drawable/arrow_back_icon"-->
-<!--                app:tint="@color/orange"-->
-<!--                tools:ignore="ContentDescription,ImageContrastCheck,KeyboardInaccessibleWidget,MissingConstraints,SpeakableTextPresentCheck"-->
-<!--                tools:layout_editor_absoluteX="16dp"-->
-<!--                tools:layout_editor_absoluteY="16dp" />-->
-
-
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
@@ -73,7 +60,10 @@
                 android:layout_width="354dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
+                android:id="@+id/emailL_ed1"
                 android:layout_marginEnd="0dp"
+                app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="@string/email">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -86,20 +76,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--            <EditText-->
-<!--                android:id="@+id/email_ed1"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="@string/email"-->
-<!--                android:importantForAutofill="no"-->
-<!--                android:inputType="textEmailAddress"-->
-<!--                tools:ignore="TouchTargetSizeCheck" />-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/red"
-                android:text="@string/required"/>
-
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
@@ -109,6 +85,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_marginEnd="0dp"
+                app:errorEnabled="true"
+                android:id="@+id/passwordL_ed1"
+                app:errorIconDrawable="@null"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:passwordToggleEnabled="true"
                 android:hint="@string/password">
 
@@ -132,11 +112,6 @@
 <!--                android:inputType="textPassword"-->
 <!--                tools:ignore="TouchTargetSizeCheck" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/red"
-                android:text="@string/required"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -187,39 +162,43 @@
                 android:textStyle="bold"
                 android:text="@string/do_have_an_account_sign_in"
                 android:layout_gravity="center" />
-
-            <!--            <LinearLayout-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:orientation="horizontal"-->
-            <!--                android:gravity="center">-->
-
-            <!--                <ImageView-->
-            <!--                    android:layout_width="72dp"-->
-            <!--                    android:layout_height="49dp"-->
-            <!--                    android:layout_margin="12dp"-->
-            <!--                    android:background="@drawable/phone_icon1"-->
-            <!--                    android:importantForAccessibility="no" />-->
-
-            <!--            </LinearLayout>-->
+            <TextView
+                android:id="@+id/tvOr1"
+                android:layout_width="359dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="----------------------- OR --------------------------"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"/>
+                android:layout_height="20dp"/>
 
-            <!--            <TextView-->
-            <!--                android:id="@+id/do_have_account_tv"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_weight="0"-->
-            <!--                android:text="    Don't have an account?    Sign Up"-->
-            <!--                android:textColor="@color/black"-->
-            <!--                android:textStyle="bold"-->
-            <!--                tools:ignore="HardcodedText,InefficientWeight,TextContrastCheck" />-->
+            <ImageView
+                android:layout_width="129dp"
+                android:layout_height="45dp"
+                android:id="@+id/googleImg1"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/g_logo" />
 
-            <!--            <View-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="20dp"/>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="10dp"
+                android:text="Sign In With Google" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"/>
 
         </LinearLayout>
 

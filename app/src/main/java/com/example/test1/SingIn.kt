@@ -3,8 +3,9 @@ package com.example.test1
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -17,6 +18,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.Task
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
@@ -27,9 +30,11 @@ class SingIn : AppCompatActivity() {
     private lateinit var LogInBtn:Button
     private lateinit var actionSI:FloatingActionButton
 //    private lateinit var remember:CheckBox
-    private lateinit var emailSignIn:EditText
+    private lateinit var emailSignIn:TextInputEditText
     private lateinit var googleImg:ImageView
-    private lateinit var passwordSignIn:EditText
+    private lateinit var passwordSignIn:TextInputEditText
+    private lateinit var passwordSignInL:TextInputLayout
+    private lateinit var emailSignInL:TextInputLayout
     private lateinit var resetPassword:TextView
     var mAuth:FirebaseAuth?=null
 
@@ -60,7 +65,9 @@ class SingIn : AppCompatActivity() {
         }
 
         LogInBtn.setOnClickListener {
-            login()
+            if (validateEmail(emailSignIn,emailSignInL) && validatePassword(passwordSignIn,passwordSignInL)){
+                login()
+            }
         }
 
         resetPassword.setOnClickListener {
@@ -70,7 +77,110 @@ class SingIn : AppCompatActivity() {
         googleImg.setOnClickListener {
             signInWithGoogle()
         }
+
+        passwordSignIn.addTextChangedListener(object :TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                validatePassword(passwordSignIn,passwordSignInL)
+            }
+        })
+
+        emailSignIn.addTextChangedListener(object :TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                validateEmail(emailSignIn,emailSignInL)
+            }
+
+        })
+
     }
+
+    private fun validateEmail(emailSignIn: TextInputEditText, emailSignInL: TextInputLayout) : Boolean {
+        val emailPattern=Regex("[a-zA-Z\\d._-]+@[a-z]+\\.+[a-z]+")
+        return when{
+            emailSignIn.text.toString().trim().isEmpty() -> {
+                emailSignInL.error="Required"
+                false
+            }
+            !emailSignIn.text.toString().trim().matches(emailPattern) -> {
+                emailSignInL.error=null
+                false
+            }
+            else -> {
+                emailSignInL.error=null
+                true
+            }
+        }
+    }
+
+    private fun validatePassword(passwordSignIn: TextInputEditText, passwordSignInL: TextInputLayout): Boolean {
+        val password = passwordSignIn.text.toString().trim()
+
+        // Check if the password is empty
+        if (password.isEmpty()) {
+            passwordSignInL.error = "Required"
+            return false
+        }
+
+        // Check password length (at least 8 characters)
+        if (password.length < 8) {
+            passwordSignInL.error = "At least 8 characters long"
+            return false
+        }
+
+        // Check if the password contains at least one digit
+        if (!password.any { it.isDigit() }) {
+            passwordSignInL.error = "At least one digit"
+            return false
+        }
+
+        // Check if the password contains at least one uppercase letter
+        if (!password.any { it.isUpperCase() }) {
+            passwordSignInL.error = "At least one uppercase letter"
+            return false
+        }
+
+        // Check if the password contains at least one lowercase letter
+        if (!password.any { it.isLowerCase() }) {
+            passwordSignInL.error = "At least one lowercase letter"
+            return false
+        }
+
+        // Check if the password contains at least one special character
+        if (password.all { it.isLetterOrDigit() }) {
+            passwordSignInL.error = "At least one special character"
+            return false
+        }
+
+        // Password meets all requirements
+        passwordSignInL.error = "Strong Password"
+        return true
+    }
+
+
+//    private fun validatePassword(passwordSignIn: TextInputEditText, passwordSignInL: TextInputLayout) : Boolean {
+//        return when{
+//            passwordSignIn.text.toString().trim().isEmpty() -> {
+//                passwordSignInL.error="Required"
+//                false
+//            }
+//            passwordSignIn.text.toString().trim().length<6||passwordSignIn.text.toString().trim().length>8 -> {
+//                passwordSignInL.error="Password must be 6 to 8 character!"
+//                false
+//            }
+//            else -> {
+//                passwordSignInL.error=null
+//                true
+//            }
+//        }
+//    }
+
 
     private fun signInWithGoogle(){
         val signInIntent=googleSignInClient.signInIntent
@@ -133,6 +243,8 @@ class SingIn : AppCompatActivity() {
         emailSignIn=findViewById(R.id.email_ed)
         resetPassword=findViewById(R.id.forgetPasswordSingIn)
         passwordSignIn=findViewById(R.id.password_ed)
+        emailSignInL=findViewById(R.id.emailL_ed)
+        passwordSignInL=findViewById(R.id.passwordL_ed)
     }
 
     private fun verifyEmailAddress(){

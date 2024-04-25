@@ -61,6 +61,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_marginEnd="0dp"
+                android:id="@+id/emailL_ed"
+                app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="@string/email">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -82,11 +85,11 @@
 <!--                android:inputType="textEmailAddress"-->
 <!--                tools:ignore="TouchTargetSizeCheck" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/red"
-                android:text="@string/required"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/red"-->
+<!--                android:text="@string/required"/>-->
 
             <View
                 android:layout_width="wrap_content"
@@ -97,7 +100,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_marginEnd="0dp"
+                app:errorEnabled="true"
+                android:id="@+id/passwordL_ed"
+                app:errorIconDrawable="@null"
                 app:passwordToggleEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="@string/password">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -119,11 +126,8 @@
 <!--                android:drawableEnd="@drawable/password_icon"-->
 <!--                android:importantForAutofill="no" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/red"
-                android:text="@string/required"/>
+
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
