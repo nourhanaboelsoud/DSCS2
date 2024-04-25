@@ -23,6 +23,21 @@
             android:padding="33dp"
             tools:ignore="UselessLeaf">
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fabGetInfo"
+                android:clickable="true"
+                app:backgroundTint="@color/white"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/arrow_back_white"
+                android:importantForAccessibility="no"
+                android:focusable="true" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circleImageView1"
                 android:layout_width="239dp"
@@ -44,7 +59,7 @@
                 android:layout_height="20dp"/>
 
             <TextView
-                android:id="@+id/getfullName"
+                android:id="@+id/getFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -78,21 +93,34 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"/>
+                android:layout_height="20dp"/>
 
-            <com.google.android.material.button.MaterialButton
+            <TextView
+                android:id="@+id/emailTxt"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/backButtonUserInfo"
-                android:text="@string/back"
-                android:drawableStart="@drawable/arrow_back_white"
-                android:textSize="25sp"
-                android:backgroundTint="@color/black"
-                app:cornerRadius="30dp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp" />
 
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"/>
+
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:id="@+id/backButtonUserInfo"-->
+<!--                android:text="@string/back"-->
+<!--                android:drawableStart="@drawable/arrow_back_white"-->
+<!--                android:textSize="25sp"-->
+<!--                android:backgroundTint="@color/black"-->
+<!--                app:cornerRadius="30dp"/>-->
+
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="50dp"/>-->
 
 
         </LinearLayout>

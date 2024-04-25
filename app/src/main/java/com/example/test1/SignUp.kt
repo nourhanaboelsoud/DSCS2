@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -16,6 +17,7 @@ class SignUp : AppCompatActivity() {
 
     private lateinit var do_have_account:TextView
     private lateinit var SignUpButton:Button
+    private lateinit var actionSU:FloatingActionButton
     private lateinit var remember1: CheckBox
     private lateinit var emailSignUp: EditText
     private lateinit var passwordSignUp: EditText
@@ -28,6 +30,12 @@ class SignUp : AppCompatActivity() {
         setContentView(R.layout.activity_sign_up)
 
         initialization()
+
+        actionSU.setOnClickListener {
+            val intent=Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
+
         do_have_account.setOnClickListener {
             val intent=Intent(this,SingIn::class.java)
             startActivity(intent)
@@ -54,6 +62,7 @@ class SignUp : AppCompatActivity() {
         emailSignUp=findViewById(R.id.email_ed1)
         resetPassword=findViewById(R.id.forgetPasswordSingUp)
         passwordSignUp=findViewById(R.id.password_ed1)
+        actionSU=findViewById(R.id.actionSU)
     }
 
     private fun signUp() {
@@ -92,5 +101,4 @@ class SignUp : AppCompatActivity() {
             }
         }
     }
-
 }

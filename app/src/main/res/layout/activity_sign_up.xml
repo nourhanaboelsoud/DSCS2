@@ -23,6 +23,34 @@
             android:padding="28dp"
             tools:ignore="UselessLeaf">
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/actionSU"
+                android:clickable="true"
+                app:backgroundTint="@color/white"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/arrow_back_white"
+                android:importantForAccessibility="no"
+                android:focusable="true" />
+
+<!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                android:id="@+id/fabForgetPasswordSignIn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:clickable="true"-->
+<!--                app:backgroundTint="@color/white"-->
+<!--                app:srcCompat="@drawable/arrow_back_icon"-->
+<!--                app:tint="@color/orange"-->
+<!--                tools:ignore="ContentDescription,ImageContrastCheck,KeyboardInaccessibleWidget,MissingConstraints,SpeakableTextPresentCheck"-->
+<!--                tools:layout_editor_absoluteX="16dp"-->
+<!--                tools:layout_editor_absoluteY="16dp" />-->
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,13 +69,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
 
-            <EditText
-                android:id="@+id/email_ed1"
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="354dp"
                 android:layout_height="wrap_content"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:importantForAutofill="no" />
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:hint="@string/email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:ems="15"
+                    android:id="@+id/email_ed1"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--            <EditText-->
+<!--                android:id="@+id/email_ed1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="@string/email"-->
+<!--                android:importantForAutofill="no"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                tools:ignore="TouchTargetSizeCheck" />-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,14 +104,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
 
-            <EditText
-                android:id="@+id/password_ed1"
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="354dp"
                 android:layout_height="wrap_content"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                android:drawableEnd="@drawable/password_icon"
-                android:importantForAutofill="no" />
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                app:passwordToggleEnabled="true"
+                android:hint="@string/password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:ems="15"
+                    android:id="@+id/password_ed1"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/password_ed1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:drawableEnd="@drawable/password_icon"-->
+<!--                android:hint="@string/password"-->
+<!--                android:importantForAutofill="no"-->
+<!--                android:inputType="textPassword"-->
+<!--                tools:ignore="TouchTargetSizeCheck" />-->
 
             <TextView
                 android:layout_width="match_parent"

@@ -7,11 +7,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
-//import com.google.firebase.auth.FirebaseAuth
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var SignUpButton:Button
+    private lateinit var logInBtn:Button
 
     var mAuth: FirebaseAuth?=null
 
@@ -26,12 +25,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        logInBtn.setOnClickListener {
+            val intent=Intent(this,SingIn::class.java)
+            startActivity(intent)
+        }
+
         mAuth=FirebaseAuth.getInstance()
 
     }
 
     private fun initialization(){
         SignUpButton=findViewById(R.id.SignUpButton)
+        logInBtn=findViewById(R.id.LogInBtn)
     }
 
     override fun onStart() {

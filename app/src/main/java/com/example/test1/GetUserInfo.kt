@@ -32,11 +32,21 @@ class GetUserInfo : AppCompatActivity() {
         auth= FirebaseAuth.getInstance()
         uid=auth.currentUser?.uid.toString()
         databaseReference=FirebaseDatabase.getInstance().getReference("Users")
-        if (uid.isNotEmpty()){
+        if (uid.isNotEmpty()) {
             getUserData()
         }
 
-        binding.backButtonUserInfo.setOnClickListener {
+        val currentUser=FirebaseAuth.getInstance().currentUser
+        if(currentUser != null){
+            val email=currentUser.email
+            binding.emailTxt.text="Email : ${email}" }
+
+//        binding.backButtonUserInfo.setOnClickListener {
+//            val intent= Intent(this,UserProfile::class.java)
+//            startActivity(intent)
+//        }
+
+        binding.fabGetInfo.setOnClickListener {
             val intent= Intent(this,UserProfile::class.java)
             startActivity(intent)
         }
@@ -48,12 +58,10 @@ class GetUserInfo : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onDataChange(snapshot: DataSnapshot) {
                 user=snapshot.getValue(Users::class.java)!!
-                binding.getfullName.text = user.firstName + " " + user.lastName
+                binding.getFullName.text = user.firstName + " " + user.lastName
                 binding.getBio.text = user.bio
                 getUserProfile()
-
             }
-
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(this@GetUserInfo,"Failed to get the Data",Toast.LENGTH_LONG).show()
             }

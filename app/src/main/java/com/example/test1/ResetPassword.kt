@@ -9,14 +9,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 
 class ResetPassword : AppCompatActivity() {
 
     private lateinit var ResetButton:Button
     private lateinit var emailReset:EditText
-    private lateinit var Backutton:Button
-    var mAuth: FirebaseAuth?=null
+//    private lateinit var Backutton:Button
+    private lateinit var fabReset:FloatingActionButton
+    private var mAuth: FirebaseAuth?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,16 +38,23 @@ class ResetPassword : AppCompatActivity() {
                 Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_LONG).show()
             }
         }
+//
+//        Backutton.setOnClickListener {
+//            val intent=Intent(this,MainActivity::class.java)
+//            startActivity(intent)
+//        }
 
-        Backutton.setOnClickListener {
+        fabReset.setOnClickListener {
             val intent=Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     private fun inti() {
         ResetButton=findViewById(R.id.resetButton)
-        Backutton=findViewById(R.id.backButton)
+        fabReset=findViewById(R.id.fabReset)
+//        Backutton=findViewById(R.id.backButton)
         emailReset=findViewById(R.id.email_ed)
     }
 

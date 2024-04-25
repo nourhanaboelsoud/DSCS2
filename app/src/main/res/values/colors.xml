@@ -18,4 +18,5 @@
     <color name="windowBackground">@color/white</color>
     <color name="gray">#BDB8B8</color>
     <color name="light_orange">#FBC02D</color>
-    <color name="neli">#64A1BD</color></resources>
+    <color name="neli">#64A1BD</color>
+</resources>

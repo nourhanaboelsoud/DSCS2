@@ -27,6 +27,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
 
+<!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/fab1"-->
+<!--                android:clickable="true"-->
+<!--                app:backgroundTint="@color/black"-->
+<!--                android:tint="@color/white"-->
+<!--                app:srcCompat="@drawable/arrow_back_white"-->
+<!--                android:importantForAccessibility="no"-->
+<!--                app:elevation="6dp"-->
+<!--                android:focusable="true" />-->
+
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="20dp"/>-->
+
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -58,29 +74,61 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/Button3"
                 android:layout_width="match_parent"
-                android:layout_height="135dp"
+                android:layout_height="60dp"
                 android:backgroundTint="@color/black"
                 android:drawableStart="@drawable/arrow_back_white"
-                android:text="Communication By Gloves"
+                android:text="Gloves"
                 android:textSize="25sp"
                 app:cornerRadius="30dp" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"/>
+                android:layout_height="20dp"/>
 
-
-            <TextView
-                android:id="@+id/logout_tv"
-                android:layout_width="365dp"
-                android:layout_height="wrap_content"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logout_tv"                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:backgroundTint="@color/black"
-                android:hint="--------------------------Logout-------------------------"
-                android:textSize="20sp" />
+                android:drawableStart="@drawable/arrow_back_white"
+                android:text="Log Out"
+                android:textSize="25sp"
+                app:cornerRadius="30dp" />
+
+
+            <!--            <TextView-->
+<!--                android:id="@+id/logout_tv"-->
+<!--                android:layout_width="365dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:backgroundTint="@color/black"-->
+<!--                android:hint="                              Logout"-->
+<!--                android:textSize="20sp" />-->
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"/>
+                android:layout_height="20dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/profile_info_tv"                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/black"
+                android:drawableStart="@drawable/arrow_back_white"
+                android:text="Your Profile"
+                android:textSize="25sp"
+                app:cornerRadius="30dp" />
+
+
+            <!--            <TextView-->
+<!--                android:id="@+id/profile_info_tv"-->
+<!--                android:layout_width="365dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:backgroundTint="@color/black"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:hint="                      Your Profile"-->
+<!--                android:textSize="20sp" />-->
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"/>
 
         </LinearLayout>
 
