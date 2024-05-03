@@ -20,7 +20,6 @@ class UserProfile : AppCompatActivity() {
     private lateinit var lastName:TextView
     private lateinit var userImg:CircleImageView
     private lateinit var bio:TextView
-//    private lateinit var backBtn:Button
     private lateinit var saveInfo:Button
     private lateinit var UserInfoBtn:Button
     private lateinit var binding:ActivityUserProfileBinding
@@ -33,6 +32,15 @@ class UserProfile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityUserProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Set an onClickListener for the circleImageView
+        binding.circleImageView.setOnClickListener {
+            // Open the gallery to select an image
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent, 1)
+        }
+
 
         auth= FirebaseAuth.getInstance()
         val uid=auth.currentUser?.uid
@@ -61,11 +69,6 @@ class UserProfile : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        backBtn.setOnClickListener {
-//            val intent= Intent(this,FirstScreen::class.java)
-//            startActivity(intent)
-//        }
-
         UserInfoBtn.setOnClickListener {
             val intent= Intent(this,GetUserInfo::class.java)
             startActivity(intent)
@@ -73,48 +76,52 @@ class UserProfile : AppCompatActivity() {
 
     }
 
-//    private fun uploadProfilePic() {
-//            // Open the gallery to select an image
-//            val intent = Intent(Intent.ACTION_PICK)
-//            intent.type = "image/*"
-//            startActivityForResult(intent, 1)
-//        }
-//
-//
+    private fun uploadProfilePic() {
+            // Open the gallery to select an image
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent, 1)
+        }
+
+
     // Override onActivityResult to handle the selected image
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
-//            val imageUri = data.data
-//            if (imageUri != null) {
-//                // Upload the selected image to Firebase Storage
-//                storageReference = FirebaseStorage.getInstance().getReference("Users/${auth.currentUser?.uid}.jpeg")
-//                storageReference.putFile(imageUri)
-//                    .addOnSuccessListener {
-//                        Toast.makeText(this, "Profile Updated Successfully", Toast.LENGTH_LONG).show()
-//                    }
-//                    .addOnFailureListener {
-//                        Toast.makeText(this, "Failed to Upload the image", Toast.LENGTH_LONG).show()
-//                    }
-//            }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
+            val imageUri = data.data
+            if (imageUri != null) {
+                // Upload the selected image to Firebase Storage
+                storageReference = FirebaseStorage.getInstance().getReference("Users/${auth.currentUser?.uid}.jpeg")
+                storageReference.putFile(imageUri)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Profile Updated Successfully", Toast.LENGTH_LONG).show()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "Failed to Upload the image", Toast.LENGTH_LONG).show()
+                    }
+            }
+        }
+    }
+
+
+
+
+//    private fun uploadProfilePic() {
+//        imageUri=Uri.parse("android.resource://$packageName/${R.drawable.avatar}")
+//        storageReference=FirebaseStorage.getInstance().getReference("Users/"+auth.currentUser?.uid+".jpeg")
+//        storageReference.putFile(imageUri).addOnSuccessListener {
+//            Toast.makeText(this,"Profile Updated Successfully",Toast.LENGTH_LONG).show()
+//        } .addOnFailureListener {
+//            Toast.makeText(this,"Failed to Upload the image",Toast.LENGTH_LONG).show()
 //        }
 //    }
 
-    private fun uploadProfilePic() {
-        imageUri=Uri.parse("android.resource://$packageName/${R.drawable.avatar}")
-        storageReference=FirebaseStorage.getInstance().getReference("Users/"+auth.currentUser?.uid+".jpeg")
-        storageReference.putFile(imageUri).addOnSuccessListener {
-            Toast.makeText(this,"Profile Updated Successfully",Toast.LENGTH_LONG).show()
-        } .addOnFailureListener {
-            Toast.makeText(this,"Failed to Upload the image",Toast.LENGTH_LONG).show()
-        }
-    }
+
 
     private fun initialization(){
         firstName=findViewById(R.id.FN)
         lastName=findViewById(R.id.LN)
         bio=findViewById(R.id.Bio)
-//        backBtn=findViewById(R.id.backButtonProfile)
         saveInfo=findViewById(R.id.saveInfoButton)
         UserInfoBtn=findViewById(R.id.BtnGetUserInfo)
         userImg=findViewById(R.id.circleImageView)

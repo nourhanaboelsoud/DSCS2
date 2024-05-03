@@ -50,7 +50,6 @@ class GetUserInfo : AppCompatActivity() {
             val intent= Intent(this,UserProfile::class.java)
             startActivity(intent)
         }
-
     }
 
     private fun getUserData() {
