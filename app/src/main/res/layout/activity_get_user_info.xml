@@ -108,21 +108,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"/>
 
-<!--            <com.google.android.material.button.MaterialButton-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="60dp"-->
-<!--                android:id="@+id/backButtonUserInfo"-->
-<!--                android:text="@string/back"-->
-<!--                android:drawableStart="@drawable/arrow_back_white"-->
-<!--                android:textSize="25sp"-->
-<!--                android:backgroundTint="@color/black"-->
-<!--                app:cornerRadius="30dp"/>-->
-
-<!--            <View-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="50dp"/>-->
-
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
