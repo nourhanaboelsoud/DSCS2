@@ -34,9 +34,9 @@
                 android:importantForAccessibility="no"
                 android:focusable="true" />
 
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="20dp"/>-->
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circleImageView"
@@ -63,7 +63,7 @@
                 android:layout_marginRight="30dp"
                 android:hint="@string/first_name"
                 android:importantForAutofill="no"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 app:layout_constraintTop_toBottomOf="@+id/circleImageView"
                 tools:ignore="TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="0dp" />
@@ -77,25 +77,38 @@
                 android:layout_marginRight="30dp"
                 android:hint="@string/last_name"
                 android:importantForAutofill="no"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 app:layout_constraintTop_toBottomOf="@+id/circleImageView"
                 tools:ignore="TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="0dp" />
 
-
             <EditText
-                android:id="@+id/Bio"
+                android:id="@+id/Age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:hint="@string/bio"
+                android:hint="Age"
                 android:importantForAutofill="no"
-                android:inputType="textEmailAddress"
+                android:inputType="number"
                 app:layout_constraintTop_toBottomOf="@+id/circleImageView"
-                tools:ignore="TouchTargetSizeCheck"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="0dp" />
+            <EditText
+                android:id="@+id/Phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:hint="Phone Number"
+                android:importantForAutofill="no"
+                android:inputType="phone"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                tools:ignore="TextFields,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="0dp" />
+
 
             <View
                 android:layout_width="wrap_content"
@@ -127,7 +140,6 @@
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"/>
-
 
         </LinearLayout>
 

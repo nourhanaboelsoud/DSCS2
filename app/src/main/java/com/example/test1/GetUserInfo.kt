@@ -39,7 +39,8 @@ class GetUserInfo : AppCompatActivity() {
         val currentUser=FirebaseAuth.getInstance().currentUser
         if(currentUser != null){
             val email=currentUser.email
-            binding.emailTxt.text="Email : ${email}" }
+            binding.emailTxt.text="Email : ${email}"
+        }
 
 //        binding.backButtonUserInfo.setOnClickListener {
 //            val intent= Intent(this,UserProfile::class.java)
@@ -58,7 +59,8 @@ class GetUserInfo : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 user=snapshot.getValue(Users::class.java)!!
                 binding.getFullName.text = user.firstName + " " + user.lastName
-                binding.getBio.text = user.bio
+                binding.getAge.text = user.age
+                binding.phoneNum.text = user.phone
                 getUserProfile()
             }
             override fun onCancelled(error: DatabaseError) {

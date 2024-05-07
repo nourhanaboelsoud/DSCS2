@@ -49,12 +49,14 @@ class UserProfile : AppCompatActivity() {
         binding.saveInfoButton.setOnClickListener {
             val firstName=binding.FN.text.toString()
             val lastName=binding.LN.text.toString()
-            val bio=binding.Bio.text.toString()
-            val user=Users(firstName, lastName, bio)
+            val age=binding.Age.text.toString()
+            val phone=binding.Phone.toString()
+            val user=Users(firstName, lastName, age , phone)
             if (uid != null) {
                 databaseReference.child(uid).setValue(user).addOnCompleteListener {
                     if (it.isSuccessful){
-                        uploadProfilePic()
+//                        uploadProfilePic()
+                        Toast.makeText(this,"Profile Updated Successfully",Toast.LENGTH_LONG).show()
                     } else {
                         Toast.makeText(this,"Failed to update profile",Toast.LENGTH_LONG).show()
                     }
@@ -94,7 +96,7 @@ class UserProfile : AppCompatActivity() {
                 storageReference = FirebaseStorage.getInstance().getReference("Users/${auth.currentUser?.uid}.jpeg")
                 storageReference.putFile(imageUri)
                     .addOnSuccessListener {
-                        Toast.makeText(this, "Profile Updated Successfully", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Pic Updated Successfully", Toast.LENGTH_LONG).show()
                     }
                     .addOnFailureListener {
                         Toast.makeText(this, "Failed to Upload the image", Toast.LENGTH_LONG).show()
@@ -121,7 +123,7 @@ class UserProfile : AppCompatActivity() {
     private fun initialization(){
         firstName=findViewById(R.id.FN)
         lastName=findViewById(R.id.LN)
-        bio=findViewById(R.id.Bio)
+        bio=findViewById(R.id.Age)
         saveInfo=findViewById(R.id.saveInfoButton)
         UserInfoBtn=findViewById(R.id.BtnGetUserInfo)
         userImg=findViewById(R.id.circleImageView)

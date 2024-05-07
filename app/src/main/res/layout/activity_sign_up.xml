@@ -76,9 +76,9 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="20dp"/>-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="354dp"
@@ -162,19 +162,30 @@
                 android:textStyle="bold"
                 android:text="@string/do_have_an_account_sign_in"
                 android:layout_gravity="center" />
-            <TextView
-                android:id="@+id/tvOr1"
-                android:layout_width="359dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="----------------------- OR --------------------------"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
 
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
+            <ImageView
+                android:layout_width="310dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="10dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/or" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvOr1"-->
+<!--                android:layout_width="359dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:text="-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; OR &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;"-->
+<!--                android:textSize="18sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="20dp"/>-->
 
             <ImageView
                 android:layout_width="129dp"
@@ -194,7 +205,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginBottom="10dp"
-                android:text="Sign In With Google" />
+                android:text="@string/sign_in_with_google" />
 
             <View
                 android:layout_width="wrap_content"

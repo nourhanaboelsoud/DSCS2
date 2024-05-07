@@ -91,9 +91,9 @@
 <!--                android:textColor="@color/red"-->
 <!--                android:text="@string/required"/>-->
 
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="20dp"/>-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="354dp"
@@ -179,53 +179,30 @@
                 android:text="@string/don_t_have_an_account_sign_up"
                 android:layout_gravity="center" />
 
-            <TextView
-                android:id="@+id/tvOr"
-                android:layout_width="359dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="----------------------- OR --------------------------"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+            <ImageView
+                android:layout_width="310dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="10dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/or" />
 
 
-            <!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
+<!--            <TextView-->
+<!--                android:id="@+id/tvOr"-->
+<!--                android:layout_width="359dp"-->
 <!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal"-->
-<!--                android:gravity="center">-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:text="-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; OR &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;"-->
+<!--                android:textSize="18sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
 
-<!--                <ImageView-->
-<!--                    android:layout_width="72dp"-->
-<!--                    android:layout_height="49dp"-->
-<!--                    android:layout_margin="12dp"-->
-<!--                    android:background="@drawable/phone_icon1"-->
-<!--                    android:importantForAccessibility="no" />-->
-
-<!--            </LinearLayout>-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="109dp"-->
-<!--                    android:layout_height="35dp"-->
-<!--                    android:layout_marginStart="5dp"-->
-<!--                    android:layout_marginTop="5dp"-->
-<!--                    android:layout_marginEnd="50dp"-->
-<!--                    android:layout_marginBottom="5dp"-->
-<!--                    android:src="@drawable/logo" />-->
-
-<!--                <com.google.android.material.button.MaterialButton-->
-<!--                    android:id="@+id/logGoogleButton"-->
-<!--                    android:layout_width="342dp"-->
-<!--                    android:layout_height="63dp"-->
-<!--                    android:backgroundTint="@color/black"-->
-<!--                    android:text="Log In With Google"-->
-<!--                    android:textSize="25sp"-->
-<!--                    app:cornerRadius="30dp" />-->
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="20dp"/>-->
 
             <ImageView
                 android:layout_width="129dp"
@@ -245,26 +222,12 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginBottom="10dp"
-                android:text="Sign In With Google" />
+                android:text="@string/sign_in_with_google" />
 
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"/>
 
-
-            <!--            <TextView-->
-<!--                android:id="@+id/do_have_account_tv"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="0"-->
-<!--                android:text="    Don't have an account?    Sign Up"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textStyle="bold"-->
-<!--                tools:ignore="HardcodedText,InefficientWeight,TextContrastCheck" />-->
-
-<!--            <View-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="20dp"/>-->
 
         </LinearLayout>
 
