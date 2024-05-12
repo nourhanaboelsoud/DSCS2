@@ -199,7 +199,7 @@ class SignUp : AppCompatActivity() {
                 val intent=Intent(this,FirstScreen::class.java)
                 startActivity(intent)
             } else{
-                Toast.makeText(applicationContext, "Can't LogIn!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Can't Login!", Toast.LENGTH_LONG).show()
             }
         }
     }

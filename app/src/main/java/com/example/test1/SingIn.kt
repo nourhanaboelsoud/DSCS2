@@ -23,7 +23,6 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
-
 class SingIn : AppCompatActivity() {
     private lateinit var googleSignInClient:GoogleSignInClient
     private lateinit var do_not_have_account:TextView

@@ -50,8 +50,8 @@ class UserProfile : AppCompatActivity() {
             val firstName=binding.FN.text.toString()
             val lastName=binding.LN.text.toString()
             val age=binding.Age.text.toString()
-            val phone=binding.Phone.toString()
-            val user=Users(firstName, lastName, age , phone)
+//            val bio=binding.Bio.toString()
+            val user=Users(firstName, lastName, age)
             if (uid != null) {
                 databaseReference.child(uid).setValue(user).addOnCompleteListener {
                     if (it.isSuccessful){

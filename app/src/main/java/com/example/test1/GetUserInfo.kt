@@ -60,7 +60,7 @@ class GetUserInfo : AppCompatActivity() {
                 user=snapshot.getValue(Users::class.java)!!
                 binding.getFullName.text = user.firstName + " " + user.lastName
                 binding.getAge.text = user.age
-                binding.phoneNum.text = user.phone
+//                binding.bio1.text = user.bio
                 getUserProfile()
             }
             override fun onCancelled(error: DatabaseError) {
